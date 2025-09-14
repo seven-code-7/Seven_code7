@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>seven code7 — استوديو الألعاب والتطبيقات</title>
+  <meta name="description" content="استوديو seven code7 — نجمع فيه كل مشاريعنا وألعابنا. المطورون: محمود و ليث. VIP: 7777" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Changa:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- خلفية مجرّية -->
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <!-- الشريط العلوي -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo-pill">seven_code7</span>
+      <span class="brand-sub">استوديو الألعاب والتطبيقات</span>
+    </div>
+
+    <nav class="top-actions">
+      <button id="vipBtn" class="btn primary">دخول VIP</button>
+      <button id="logoutBtn" class="btn ghost" hidden>تسجيل الخروج</button>
+    </nav>
+  </header>
+
+  <!-- قسم البطل -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        seven code7
+        <span class="bling">★</span>
+      </h1>
+      <p class="hero-text">
+        هنا ننشر كل مشاريعنا الخاصة — ألعاب، أدوات، وأفكار مبتكرة. المطورون: <strong>محمود</strong> و<strong>ليث</strong>.
+      </p>
+      <p class="dua">
+        نرجو دعمكم — نحن مطورون أطفال عرب شغوفون. نريد أن نستمتع ونفيد الناس ونكسب الثواب وننفع بها الإسلام. ادعوا لنا.
+      </p>
+
+      <div class="hero-quick">
+        <div class="quick-item">
+          <span class="tag">#SevenCode7</span>
+          <span class="tag">#Games</span>
+          <span class="tag">#Apps</span>
+          <span class="tag">#Web</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- أدوات التصفية والبحث -->
+  <section class="controls container">
+    <div class="filters">
+      <div class="chips" role="tablist" aria-label="تصنيف المشاريع">
+        <button class="chip active" data-filter="all" role="tab" aria-selected="true">الكل</button>
+        <button class="chip" data-filter="game" role="tab">ألعاب</button>
+        <button class="chip" data-filter="app" role="tab">تطبيقات</button>
+        <button class="chip" data-filter="tool" role="tab">أدوات</button>
+      </div>
+      <div class="search-sort">
+        <input id="search" class="input" type="search" placeholder="ابحث بالعنوان أو الوصف..." />
+        <select id="sort" class="input">
+          <option value="newest">الأحدث</option>
+          <option value="oldest">الأقدم</option>
+          <option value="timeAsc">وقت البرمجة: الأقل</option>
+          <option value="timeDesc">وقت البرمجة: الأعلى</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- شبكة المشاريع -->
+  <main class="container">
+    <div id="projectsGrid" class="grid"></div>
+
+    <!-- قسم VIP -->
+    <section id="vipSection" class="vip-section" hidden>
+      <h2 class="section-title">لوحة VIP</h2>
+      <div class="vip-grid">
+        <div class="vip-card">
+          <h3>إحصاءات سريعة</h3>
+          <ul class="stats">
+            <li><strong>عدد المشاريع:</strong> <span id="statCount">0</span></li>
+            <li><strong>إجمالي وقت البرمجة:</strong> <span id="statTime">0</span> ساعة</li>
+            <li><strong>ألعاب:</strong> <span id="statGames">0</span></li>
+            <li><strong>تطبيقات:</strong> <span id="statApps">0</span></li>
+          </ul>
+        </div>
+        <div class="vip-card">
+          <h3>روابط سريعة</h3>
+          <div id="vipLinks" class="vip-links"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- المطورون -->
+  <section class="devs container">
+    <h2 class="section-title">المطورون</h2>
+    <div class="devs-wrap">
+      <div class="dev-card">
+        <div class="dev-avatar">م</div>
+        <div>
+          <h3 class="dev-name">محمود</h3>
+          <p class="dev-role">مطور واجهات وتجارب</p>
+        </div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-avatar">ل</div>
+        <div>
+          <h3 class="dev-name">ليث</h3>
+          <p class="dev-role">مطور ألعاب وجافاسكربت</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="logo-pill small">seven_code7</span>
+      <span>© جميع الحقوق محفوظة</span>
+    </div>
+    <p class="footer-note">
+      seven code7 — نبرمج بحب وإتقان.
+    </p>
+  </footer>
+
+  <!-- نافذة تسجيل دخول VIP -->
+  <dialog id="vipDialog" class="modal">
+    <form method="dialog" class="modal-body" id="vipForm">
+      <h3 class="modal-title">تسجيل دخول VIP</h3>
+      <p class="modal-text">أدخل الرمز الخاص بك للوصول إلى لوحة VIP.</p>
+      <input id="vipCode" class="input big" type="password" placeholder="أدخل الرمز — تلميح: 7777" />
+      <div class="modal-actions">
+        <button class="btn ghost" value="cancel">إلغاء</button>
+        <button class="btn primary" id="vipSubmit" value="confirm">دخول</button>
+      </div>
+      <p id="vipMsg" class="vip-msg" role="alert" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
